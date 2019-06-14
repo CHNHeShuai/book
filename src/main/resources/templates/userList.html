@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头文件-->
+<head th:include="aside :: head"></head>
+<body>
+  <script>NProgress.start()</script>
+
+  <div class="main">
+    <div class="container-fluid">
+      <div class="row">
+        <h2>信息查询</h2>
+        <div class="col-md-8">
+          <table style="text-align: center" class="table table-striped table-bordered table-hover">
+            <thead>
+               <tr style="height: 60px">
+                <th style="text-align: center">序号</th>
+                <th style="text-align: center">用户名</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr style="height: 60px" th:each="user,index:${userList}">
+                <td th:text="${index.count}"></td>
+                <td th:text="${user.username}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--引入边缘部分-->
+  <div class="aside" th:include="aside :: aside"></div>
+  <script>NProgress.done()</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>课程后台管理</title>
+    <link rel="shortcut icon" href="favicon.ico" th:href="@{/assets/img/favicon.ico}" type="image/x-icon">
+    <link rel="stylesheet" href="" th:href="@{/assets/vendors/bootstrap/css/bootstrap.css}" >
+    <link rel="stylesheet" href="" th:href="@{/assets/vendors/font-awesome/css/font-awesome.css}">
+    <link rel="stylesheet" href="" th:href="@{/assets/vendors/nprogress/nprogress.css}"         >
+    <link rel="stylesheet" href="" th:href="@{/assets/css/admin.css}">
+    <script src="" th:src="@{/assets/vendors/jquery/jquery.js}"></script>
+    <script src="" th:src="@{/assets/vendors/bootstrap/js/bootstrap.js}"></script>
+    <script src="" th:src="@{/assets/vendors/nprogress/nprogress.js}"></script>
+</head>
+<body>
+
+<div class="aside" th:fragment="aside">
+    <div class="profile">
+        <img class="avatar" th:src="@{/upload/image.jpg}">
+        <span class="name" style="color: #3cf828;display:block" th:text="${session.user.username}"></span>
+    </div>
+    <ul class="nav">
+        <li>
+            <a  th:href="@{/userList}"><i class="fa fa-dashboard"></i>用户管理</a>
+        </li>
+        <li>
+            <a  th:href="@{/bookList}"><i class="fa fa-dashboard"></i>课程管理</a>
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>

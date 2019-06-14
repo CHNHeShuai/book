@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!--引入头文件-->
+<head th:include="aside :: head"></head>
+<body>
+  <script>NProgress.start()</script>
+
+
+  <div class="main">
+    <div class="row">
+      <div class="col-md-10">
+        <h2>修改课程</h2>
+        <form th:action="@{/updateBook}" method="post" >
+          <input type="hidden" name="id" th:value="${book.id}">
+          <div class="form-group">
+            <label for="name" style="color: #f854ec">课程名</label>
+            <input id="name" class="form-control" style="height: 50px;width: 400px" th:value="${book.name}" name="name" type="text" >
+          </div>
+          <div class="form-group">
+            <label for="classroom" style="color: #f854ec">教室</label>
+            <input id="classroom" class="form-control" style="height: 50px;width: 400px" th:value="${book.classroom}" name="classroom" type="text" >
+          </div>
+          <div class="form-group">
+            <label for="teacher" style="color: #f854ec">老师</label>
+            <input id="teacher" class="form-control" style="height: 50px;width: 400px" th:value="${book.teacher}" name="teacher" type="text" >
+          </div>
+          <div class="form-group">
+            <label for="maxnumber" style="color: #f854ec">最大学生数</label>
+            <input id="maxnumber" class="form-control" style="height: 50px;width: 400px" th:value="${book.maxnumber}" name="maxnumber" type="text" >
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">修改</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--引入边缘部分-->
+  <div class="aside" th:include="aside :: aside"></div>
+  <script>NProgress.done()</script>
+</body>
+</html>
